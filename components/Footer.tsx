@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="row d-flex flex-sm-column flex-md-row">
       <div className="item-wrapper d-flex col-md-6">
         <div className="footer-item ">
-          <Image src="/img/pizzaImg.jpg" width={300} height={300} alt='img' /* style={{objectFit:"cover"}} *//>
+          <Image src="/img/pizzaImg.jpg" width={300} height={300} alt='img' />
         </div>
-        <div className="footer-item col-sm-3 col-md-3 py-5 px-2 mx-5"><h4>OH YES WE DID THE 'JUST PIZZA' ,WELL BAKED SLICE OF PIZZA</h4></div>
+        <div className="footer-item d-none d-md-block col-md-3 py-5 px-2 mx-5"><h4>OH YES WE DID THE JUST PIZZA ,WELL BAKED SLICE OF PIZZA</h4></div>
       </div>
 
       <div className="item-wrapper d-flex col-md-5">

@@ -15,7 +15,12 @@ html,body {
 .nav-div:last-child{
  position: relative;
 }
-
+.link{
+    all: unset;
+}
+.link:hover{
+    all: unset;
+}
 .nav-div{
     align-items: center !important;
     justify-content: center;
@@ -24,6 +29,9 @@ html,body {
 p {
     margin: 0px !important;
     padding: 0px !important;
+ }
+ .modal{
+    /* width: 50vw; */
  }
 
  @media only screen and (max-width: 1218px){
@@ -79,4 +87,49 @@ p {
 }
 .top100{
     margin-top: 110px !important;
+    min-height:80vh ;
+}
+.badge{
+    position: absolute;
+    top:-8px;
+    right: -27px;
+    background-color: green;
+}
+.sizeActive{
+    background-color: #e04d29;
+    border-radius: 50%;
+}
+#card{
+    width: 100px;
+}
+#card:focus{
+    outline: 0 !important;
+}
+.text-green{
+    color: rgb(20 184 166) !important;
+}
+#pizzaList{
+    position: absolute;
+    visibility: hidden;
+    top: -110px;
+    z-index: 100;
+}
+
+/* .done{} */
+.inProgress{
+    animation: inProgress 1s ease infinite alternate;
+}
+@keyframes inProgress {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.undone{
+    opacity: 0.3;
+}
+.undone > .checkedIcon , .inProgress > .checkedIcon{
+    display: none !important;
 }

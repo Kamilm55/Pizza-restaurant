@@ -1,17 +1,22 @@
 import React from 'react'
 import styles from '@/styles/Navbar.module.css'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+import { useAppSelector } from '@/REDUX/app/hooks'
+import { selectCartDatas } from '@/REDUX/features/cartSlice'
 
 const Navbar = () => {
 
-    const navItems = ['Homepage' , 'Products' , 'Menu' , 'Pizza' , 'Events' , 'Blog' , 'Contact']
-    const counter = 2;
+    const navItems = ['Homepage' , 'Products' , 'Menu' , 'Pizza' , 'Cart' , 'Orders' , 'Contact']
+    const cartData = useAppSelector(selectCartDatas);
+    const counter = cartData.length;
+    const router = useRouter();
     return (
     <div className={styles.navBarP}>
 
         <nav className={styles.navBar} >
            <div className="nav-div  d-flex">
-            <div className={`${styles.phone} my-auto mx-2`}>
+            <div className={`${styles.phone} my-auto mx-2 d-none d-md-flex`}>
             <Image src="/img/telephone.png"  width="32" height="32" alt='phone' /> 
             </div>
             <div >
@@ -22,13 +27,21 @@ const Navbar = () => {
            <div className="nav-div  d-flex  align-items-center p">
             {navItems.map((navItem , index) => {
                 return (
-                        <div className={`${styles.navItem}  mx-4 c-pointer fs-6`} key={index}>
+                        <div onClick={()=>{
+                            navItem === 'Homepage' || navItem === 'Pizza' ? router.push('/') :null
+                            navItem ===  'Orders' ? router.push('/orderTrack') : null;
+                            navItem ===  'Cart' ? router.push('/order') : null;
+                            navItem ===  'Menu' || navItem === 'Products'? document.querySelector('#pizzaList')?.scrollIntoView({behavior: 'smooth',block: 'start'}) : null;
+                            navItem ===  'Contact' ? document.querySelector('footer')?.scrollIntoView({behavior: 'smooth',block: 'start'}) : null;
+
+                        }
+                            } className={`${styles.navItem}  mx-4 c-pointer fs-6`} key={index}>
                             <p className='p'>{navItem}</p>
                         </div>
                 )
             })}
            </div>
-           <div className="nav-div px-4 mx-4">
+           <div className="nav-div px-4 mx-4" onClick={()=>router.push('/order')}>
             <Image src='/img/cart.png' width={40} height={40} alt='cart' className='c-pointer'/>
             <span className={styles.counter}>{counter}</span>
            </div>
