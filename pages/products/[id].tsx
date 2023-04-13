@@ -77,7 +77,9 @@ const Product = ({pizza}:any) => {
 }
 
 export const  getServerSideProps:GetServerSideProps = async ({params:{id}}:any) => {
-  const res = await fetch(`http://localhost:3000/api/Products/${id}`);
+  const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-theta.vercel.app" : "http://localhost:3000";
+
+  const res = await fetch(`${URL}/api/Products/${id}`);
   const data = await res.json();
 
   return {
