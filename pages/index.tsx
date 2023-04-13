@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   if(myCookie.token === process.env.TOKEN)
     admin = true;
 
-  const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-kamilm55.vercel.app" : "http://localhost:3000";
+  const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-theta.vercel.app" : "http://localhost:3000";
   const res = await fetch(`${URL}/api/Products`);
   const data = await res.json(); 
 

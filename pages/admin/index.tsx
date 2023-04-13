@@ -28,7 +28,7 @@ const Index = ({products,orders}:any) => {
         :
         setOrders((prev) => prev.filter( (allItem:any) => allItem._id !== item._id))
 
-        const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-kamilm55.vercel.app" : "http://localhost:3000";
+        const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-theta.vercel.app" : "http://localhost:3000";
 
         try {
             await fetch(`${URL}/api/${whichIs(method)}/${item._id}`, {
@@ -43,7 +43,7 @@ const Index = ({products,orders}:any) => {
     }
 
     const handleEdit = async (item:any) => {
-        const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-kamilm55.vercel.app" : "http://localhost:3000";
+        const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-theta.vercel.app" : "http://localhost:3000";
 
         await fetch(`${URL}/api/Orders/${item._id}`, {
             method: 'PUT',
@@ -161,7 +161,7 @@ export const getServerSideProps:GetServerSideProps = async (ctx) => {
         }
     }
    }
-   const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-kamilm55.vercel.app" : "http://localhost:3000";
+   const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-theta.vercel.app" : "http://localhost:3000";
 
     const res = await fetch(`${URL}/api/Products`);
     const data = await res.json();

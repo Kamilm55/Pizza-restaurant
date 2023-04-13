@@ -9,7 +9,7 @@ const Login = () => {
 
     const handleSubmit = async (e:any) => {
       e.preventDefault();
-      const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-kamilm55.vercel.app" : "http://localhost:3000";
+      const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-theta.vercel.app" : "http://localhost:3000";
 
       try {
         const response = await fetch(`${URL}/api/login`, {

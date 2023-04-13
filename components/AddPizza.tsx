@@ -32,7 +32,7 @@ const AddPizza = ({open,setOpen}:any) => {
         }
 
         async function postToDb(){
-            const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-kamilm55.vercel.app" : "http://localhost:3000";
+            const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-theta.vercel.app" : "http://localhost:3000";
 
             const imgFile = new FormData();
             imgFile.append("file",img);

@@ -21,7 +21,7 @@ const Modal = ({open,setOpen,total}:any) => {
         event.preventDefault();
           if(formValue.customer!== "" && formValue.address!== "" && formValue.phone!== ""){
               setForm({customer:"",phone:"",address:"",total:total});
-              const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-kamilm55.vercel.app" : "http://localhost:3000";
+              const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-theta.vercel.app" : "http://localhost:3000";
 
               const res = await fetch(`${URL}/api/Orders`,{
                 method:'POST',
