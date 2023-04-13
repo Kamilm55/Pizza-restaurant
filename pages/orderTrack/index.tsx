@@ -50,7 +50,7 @@ const OrderTrack = ({data}:any) => {
             <td>{pizza._id}</td>
             <td>{pizza.customer}</td>
             <td>{pizza.address}</td>
-            <td>$ {pizza.total}</td>
+            <td>$ {Number(pizza.total.toFixed(2))}</td>
         </tr>
     )
   })}
@@ -79,7 +79,7 @@ const OrderTrack = ({data}:any) => {
              <Image className='mx-auto checkedIcon' src={'/img/checked.png'} width={25} height={25} alt="img"/>
          </div>
      </div>
-    ) : <h2 className='text-center mt-4'>You don't have any order yet!</h2>}
+    ) : <h2 className='text-center mt-4'>{"You don't have any order yet!"}</h2>}
        
     </div>
 
@@ -90,7 +90,9 @@ const OrderTrack = ({data}:any) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const res = await fetch("http://localhost:3000/api/Orders");
+    const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-kamilm55.vercel.app" : "http://localhost:3000";
+
+    const res = await fetch(`${URL}/api/Orders`);
     const data = await res.json();
 
     return {

@@ -16,8 +16,9 @@ export default async function handler (req,res) {
     }
     else if(method === 'PUT'){
         try {
-            const order = await Order.create(req.body);
-            res.status(201).json(order);
+            const { id } = req.query;
+            const order = await Order.findByIdAndUpdate(id,req.body);
+            res.status(201).json("Updated");
         } catch (error) {
             res.status(500).json(error);
         }
@@ -30,4 +31,4 @@ export default async function handler (req,res) {
             res.status(500).json(error);
         }
     }
-} 
+}

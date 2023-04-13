@@ -19,12 +19,11 @@ const Modal = ({open,setOpen,total}:any) => {
     } 
    async function handleSubmit(event:any){
         event.preventDefault();
-          console.log(formValue);
           if(formValue.customer!== "" && formValue.address!== "" && formValue.phone!== ""){
               setForm({customer:"",phone:"",address:"",total:total});
-              console.log(JSON.stringify(formValue));
-              
-              const res = await fetch("http://localhost:3000/api/Orders",{
+              const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-kamilm55.vercel.app" : "http://localhost:3000";
+
+              const res = await fetch(`${URL}/api/Orders`,{
                 method:'POST',
                 headers: {
                   "Content-Type": "application/json",

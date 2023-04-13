@@ -57,7 +57,7 @@ const Order = () => {
   })}
    </tbody>
     </table>
-    {pizzas.length === 0 && <h2 className='text-center mt-4'>You don't have any order yet!</h2>}
+    {pizzas.length === 0 && <h2 className='text-center mt-4'>{"You don't have any order yet!"}</h2>}
     </div>
 </div>
 

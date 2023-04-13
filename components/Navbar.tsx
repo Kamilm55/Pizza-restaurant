@@ -7,7 +7,7 @@ import { selectCartDatas } from '@/REDUX/features/cartSlice'
 
 const Navbar = () => {
 
-    const navItems = ['Homepage' , 'Products' , 'Menu' , 'Pizza' , 'Cart' , 'Orders' , 'Contact']
+    const navItems = ['Homepage' , 'Admin' , 'Menu' , 'Pizza' , 'Cart' , 'Orders' , 'Contact']
     const cartData = useAppSelector(selectCartDatas);
     const counter = cartData.length;
     const router = useRouter();
@@ -31,9 +31,14 @@ const Navbar = () => {
                             navItem === 'Homepage' || navItem === 'Pizza' ? router.push('/') :null
                             navItem ===  'Orders' ? router.push('/orderTrack') : null;
                             navItem ===  'Cart' ? router.push('/order') : null;
-                            navItem ===  'Menu' || navItem === 'Products'? document.querySelector('#pizzaList')?.scrollIntoView({behavior: 'smooth',block: 'start'}) : null;
+                            if(navItem ===  'Menu') {
+                                router.push("/");
+                                setTimeout(()=>{
+                                    document.querySelector('#pizzaList')?.scrollIntoView({behavior: 'smooth',block: 'start'}) 
+                                },500)
+                             };
                             navItem ===  'Contact' ? document.querySelector('footer')?.scrollIntoView({behavior: 'smooth',block: 'start'}) : null;
-
+                            navItem === 'Admin' ? router.push('/admin') : null;
                         }
                             } className={`${styles.navItem}  mx-4 c-pointer fs-6`} key={index}>
                             <p className='p'>{navItem}</p>

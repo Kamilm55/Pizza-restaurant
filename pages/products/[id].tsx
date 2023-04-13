@@ -35,7 +35,7 @@ const Product = ({pizza}:any) => {
         <Image className='col-12 col-md-6 mt-5'  src={pizza.img} width={400} height={400}  alt='img' style={{objectFit:"contain"}}/>
       <div className='col-12 col-md-6 py-4 d-flex flex-column  '>
         <h2 >{pizza.title}</h2>    
-        <h6 className=' text-red fs-4 '>$ {totalPrice}</h6>
+        <h6 className=' text-red fs-4 '>$ {Number(totalPrice.toFixed(2))}</h6>
         <p className='text-muted '>{pizza.desc}</p>  <br />  
         <h5 className='title '>Choose the size</h5>
         <div className="d-flex mt-2 gap-5 c-pointer">

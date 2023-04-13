@@ -12,7 +12,7 @@ const PizzaList = ({pizzas}:any) => {
         </div>
         <div className=" mx-auto d-flex flex-wrap gap-1">
             {pizzas.length > 0 && pizzas.map((pizza:any,index:number) => {
-                return  <Link className='link' key={index} href={`/products/${pizza._id}`}><PizzaCard pizza={pizza} /></Link>
+                return  <Link className='link mx-auto'  key={index} href={`/products/${pizza._id}`}><PizzaCard pizza={pizza} /></Link>
             })}
         </div>
     </div>

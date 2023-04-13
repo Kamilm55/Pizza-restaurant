@@ -10,7 +10,7 @@ html,body {
     overflow-x: hidden;
 }
 .c-pointer:hover{
-    cursor: pointer;
+    cursor: pointer !important;
 }
 .nav-div:last-child{
  position: relative;
@@ -30,9 +30,7 @@ p {
     margin: 0px !important;
     padding: 0px !important;
  }
- .modal{
-    /* width: 50vw; */
- }
+ 
 
  @media only screen and (max-width: 1218px){
   .nav-div:nth-child(2) > *:not(:nth-child(4)){
@@ -44,11 +42,20 @@ p {
       display: none !important;
   } 
 }
+.h100{
+    height: 100vh;
+}
+.bg-r{
+    background-color: rgb(164, 198, 252);
+}
+.bgRed{
+    background-color: #d1411e !important;
+}
 .bg-red{
     z-index: -10;
     /* width: 100%; */
     position: relative !important;
-    background-color: #d1411e;
+    background-color: #d1411e !important;
 }
 .arrowSign:first-child,.arrowSign:last-child{
     position: absolute;
