@@ -64,7 +64,7 @@ const Product = ({pizza}:any) => {
         <div className='d-flex gap-2'>
         <input  type="number" value={countValue} onChange={handleChange} name="card" id="card" className='px-2' />
         <button type='button' className='btn btn-danger' onClick={()=>{
-          dispatch(addProduct({title:pizza.title,img:pizza.img,count:countValue,priceOfOne:parseFloat((totalPrice/ countValue).toFixed(2)),extras:checked,total:totalPrice}));
+          dispatch(addProduct({title:pizza.title,img:pizza.img,count:countValue,priceOfOne:parseFloat((Number(totalPrice.toFixed(2)) / countValue).toFixed(2)),extras:checked,total:Number(totalPrice.toFixed(2))}));
         }
         }>Add to Cart</button>
         </div>
