@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   const URL = process.env.NODE_ENV === 'production' ? "https://pizza-next-kamilm55.vercel.app" : "http://localhost:3000";
   const res = await fetch(`${URL}/api/Products`);
-  const data = await res.json(); // Parse the response body as JSON
+  const data = await res.json(); 
 
   return {
     props: {
