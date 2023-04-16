@@ -11,7 +11,7 @@ const PizzaList = ({pizzas}:any) => {
             <p className='text-muted text-center'>Lorem ipsum dolor amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
         <div className=" mx-auto d-flex flex-wrap gap-1">
-            {pizzas.length > 0 && pizzas.map((pizza:any,index:number) => {
+            {pizzas && pizzas.map((pizza:any,index:number) => {
                 return  <Link className='link mx-auto'  key={index} href={`/products/${pizza._id}`}><PizzaCard pizza={pizza} /></Link>
             })}
         </div>
