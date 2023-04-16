@@ -26,7 +26,8 @@ const AddPizza = ({open,setOpen}:any) => {
         }
         const handleSubmit = (e:any) => {
             e.preventDefault();
-            // console.log(title,desc,prices,img,extraOptions);//onBlur change to onChange and mobile design of this app admin login form design
+            // console.log(title,desc,prices,img,extraOptions);
+            //ilk girende yuklenmir  pizzalar onBlur change to onChange and mobile design of this app admin login form design
             postToDb();
             resetForm();
         }

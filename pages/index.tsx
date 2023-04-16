@@ -28,7 +28,7 @@ export default function Home({data,admin}:any) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+Home.getInitialProps = async (ctx:any) => {
   const myCookie = ctx.req?.cookies || "" ;
   let admin = false;
   if(myCookie.token === process.env.TOKEN)
@@ -39,9 +39,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const data = await res.json(); 
 
   return {
-    props: {
+    // props: {
       data: data, // Access the `data` property of the resolved JSON data object
       admin:admin,
-    },
+    // },
   };
 };
