@@ -19,7 +19,7 @@ export default function Home({data,admin}:any) {
 
   if (!isClient) return null
   // `document` is only available on the client-side
-    let myToken = document.cookie.split('; ').find(isToken => isToken.includes('token'))?.split("=")[1];
+    let myToken = document.cookie?.split('; ').find(isToken => isToken.includes('token'))?.split("=")[1];
   
 
   return (
@@ -51,7 +51,7 @@ Home.getInitialProps = async (ctx:any) => {
   return {
     // props: {
       data: data, // Access the `data` property of the resolved JSON data object
-      admin:process.env.TOKEN,
+      // admin:process.env.TOKEN,
     // },
   };
 };
