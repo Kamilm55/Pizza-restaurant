@@ -19,6 +19,9 @@ export default function Home({data,admin}:any) {
     setPizzaList(data);
     if(pizzaList.length === 0)
     initialLoadData();
+
+      console.log(data);
+      
   }, [data])
 
    function initialLoadData() {
