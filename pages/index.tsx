@@ -17,11 +17,8 @@ export default function Home({data,admin}:any) {
 
   useEffect(() => {
     setPizzaList(data);
-    if(pizzaList.length === 0)
+    if(pizzaList.length === 0 || Object.keys(pizzaList).length === 0)    
     initialLoadData();
-
-      console.log(data);
-      
   }, [data])
 
    function initialLoadData() {

@@ -17,7 +17,7 @@ const PizzaCard = ({pizza,loading}:any) => {
       ) : (
         <div>
       <div className='p-relative img-parent' >
-        <Image  src={pizza.img} fill  alt='img' style={{objectFit:"contain"}}/>
+        <Image   src={pizza.img} fill  alt='img' style={{objectFit:"contain"}}/>
       </div>
         <h6 className='text-center text-red'>{pizza.title}</h6>    
         <h6 className='text-center'>${pizza.prices[0]}</h6>
